@@ -1,0 +1,25 @@
+{
+  "name": "arbetsprov_weknowit",
+  "version": "1.0.0",
+  "description": "Arbetsprov för WeKnowIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tselmegbaasan/arbetsprov_weknowIT.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tselmegbaasan/arbetsprov_weknowIT/issues"
+  },
+  "homepage": "https://github.com/tselmegbaasan/arbetsprov_weknowIT#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "fetch": "^1.1.0"
+  }
+}
