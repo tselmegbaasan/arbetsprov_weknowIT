@@ -1,30 +1,15 @@
 import React, { Component } from 'react';
-import DataService from '../api_service';
 import { Search } from 'react-bootstrap-icons';
+import { Link } from 'react-router-dom';
 
 export default class SearchByCity extends Component {
     constructor(props) {
         super(props);
         this.onChangeSearchTitle = this.onChangeSearchTitle.bind(this);
-        this.search = this.search.bind(this);
 
         this.state = {
-            searchTitle: "",
-            result: null
+            searchTitle: ""
         }
-    }
-
-    search() {
-        DataService.getPopulation(this.state.searchTitle)
-            .then(response => {
-                this.setState({
-                    result: response.data.population
-                })
-                console.log(response.data.population)
-            })
-            .catch(err => {
-                console.log(err)
-            })
     }
 
     onChangeSearchTitle(e) {
@@ -37,8 +22,6 @@ export default class SearchByCity extends Component {
 
     render() {
         const searchTitle = this.state.searchTitle;
-        const result = this.state.result;
-
         return (
             <div className="search-bar">
                 <h4>SEARCH BY CITY</h4>
@@ -52,12 +35,11 @@ export default class SearchByCity extends Component {
                     />
                 </div>
                 <div className="search-button input-group-append">
-                    <button className="btn btn-outline-secondary btn-circle" onClick={this.search}><Search></Search></button>
+                    <Link to={"/searchbycity/result/" + searchTitle}>
+                        <button className="btn btn-outline-secondary btn-circle"><Search></Search></button>
+                    </Link>
                 </div>
-
-                {result}
             </div>
-
 
         )
 
