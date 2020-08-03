@@ -28,6 +28,12 @@ h4 {
   margin-bottom: 50px;
 }
 
+.result-list {
+  margin-left: 500px;
+  margin-right: 500px;
+  text-align: center;
+}
+
 .form-control{
   text-align: center;
 }
