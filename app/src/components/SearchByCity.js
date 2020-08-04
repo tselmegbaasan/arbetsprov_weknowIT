@@ -22,6 +22,10 @@ export default class SearchByCity extends Component {
 
     render() {
         const searchTitle = this.state.searchTitle;
+
+        const SearchCondition = ({ condition, children }) => (condition !== "") ? <>{children}</> : <></>
+
+
         return (
             <div className="search-bar">
                 <h4>SEARCH BY CITY</h4>
@@ -34,11 +38,13 @@ export default class SearchByCity extends Component {
                         onChange={this.onChangeSearchTitle}
                     />
                 </div>
-                <div className="search-button input-group-append">
-                    <Link to={"/searchbycity/result/" + searchTitle}>
-                        <button className="btn btn-outline-secondary btn-circle"><Search></Search></button>
-                    </Link>
-                </div>
+                <SearchCondition condition={searchTitle}>
+                    <div className="search-button input-group-append">
+                        <Link to={"/searchbycity/result/" + searchTitle} >
+                            <button className="btn btn-outline-secondary btn-circle"><Search></Search></button>
+                        </Link>
+                    </div>
+                </SearchCondition>
             </div>
 
         )
