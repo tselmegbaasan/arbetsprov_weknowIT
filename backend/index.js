@@ -4,13 +4,16 @@ const username = "&username=weknowit";
 
 exports.getByCity = (req, res) => {
     const city_name = req.params.city;
-    fetch(base_url + `name_equals=${city_name}` + username, {
+    fetch(base_url + `name_equals=${city_name}` + "&featureCode=PPLA2&featureCode=PPLA&featureCode=PPLC" + username, {
         method: "GET"
     })
         .then(response => response.json())
         .then(data => {
+            let number = Number(data.geonames[0].population);
+            let result = formatNumber(number);
+
             res.status(200).send({
-                population: data.geonames[0].population
+                population: result
             })
         })
         .catch(err => {
@@ -18,6 +21,32 @@ exports.getByCity = (req, res) => {
                 message: err.message || "Some error occurred while retrieving data about: " + city_name
             })
         })
+}
+
+formatNumber = (number) => {
+    let digits = number.toString().split("");
+    let list = [];
+    let dividers = [];
+    switch (digits.length) {
+        case 4: dividers = [1]; break;
+        case 5: dividers = [2]; break;
+        case 6: dividers = [3]; break;
+        case 7: dividers = [1, 4]; break;
+        case 8: dividers = [2, 5]; break;
+        case 9: dividers = [3, 6]; break;
+        default: break;
+    }
+
+    for (i = 0; i <= digits.length; i++) {
+        if (dividers.indexOf(i) >= 0) {
+            list.push(" ");
+            list.push(digits[i]);
+        } else {
+            list.push(digits[i]);
+        }
+    }
+
+    return list.join("").toString();
 }
 
 exports.getByCountry = (req, res) => {
@@ -40,5 +69,4 @@ exports.getByCountry = (req, res) => {
             })
         })
 }
-
 
