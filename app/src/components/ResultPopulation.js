@@ -45,7 +45,7 @@ export default class ResultPopulation extends Component {
             if (condition) {
                 return (
                     <div>
-                        <div class="alert alert-secondary" role="alert">
+                        <div className="alert alert-secondary" role="alert">
                             The city doesn't exist or it is misspelled, please try again...
                     </div>
                         <a href="/searchbycity">

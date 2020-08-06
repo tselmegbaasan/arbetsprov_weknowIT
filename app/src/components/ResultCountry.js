@@ -58,15 +58,15 @@ export default class ResultCountry extends Component {
         const ConditionalContent = ({ isLoading, error, children }) => {
             if (isLoading) {
                 return (
-                    <div class="spinner-border" role="status">
-                        <span class="sr-only">Loading...</span>
+                    <div className="spinner-border" role="status">
+                        <span className="sr-only">Loading...</span>
                     </div>
                 )
             } else {
                 if (error) {
                     return (
                         <div>
-                            <div class="alert alert-secondary" role="alert">
+                            <div className="alert alert-secondary" role="alert">
                                 The country doesn't exist or it is misspelled, please try again...
                         </div>
                             <a href="/searchbycountry">
