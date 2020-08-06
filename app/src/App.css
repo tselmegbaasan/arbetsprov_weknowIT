@@ -8,17 +8,13 @@
   text-align: center;
   margin-bottom: 50px;
 }
-
 .menu-bar {
-  text-align: center;
-  
+  text-align: center; 
 }
-
 .search-bar {
   text-align: center;
-  margin-left: 450px;
-  margin-right: 450px;
-  
+  margin-left: 30%;
+  margin-right: 30%;
 }
 .input-group-append {
   margin-top: 20px;
@@ -30,13 +26,18 @@ h3 {
 }
 
 .result-list {
-  margin-left: 500px;
-  margin-right: 500px;
+  margin-left: 40%;
+  margin-right: 40%;
   text-align: center;
 }
 
+.list-group-item {
+  border-color: black;
+}
 .form-control{
   text-align: center;
+  height: 50px;
+  border-color: black;
 }
 
 .divider{ 
@@ -45,11 +46,11 @@ h3 {
   display:inline-block;
 }
 
-
 .btn-menu {
   text-align: center;
   width: 250px;
   height: 70px;  
+  border-color: black;
 }
 
 .btn-circle {
