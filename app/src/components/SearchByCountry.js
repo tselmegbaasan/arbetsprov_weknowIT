@@ -26,7 +26,7 @@ export default class SearchByCountry extends Component {
 
         return (
             <div className="search-bar">
-                <h4>SEARCH BY COUNTRY</h4>
+                <h3>SEARCH BY COUNTRY</h3>
                 <div className="input-group mb-3">
                     <input
                         type="text"

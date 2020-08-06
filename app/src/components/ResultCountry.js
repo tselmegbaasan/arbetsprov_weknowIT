@@ -84,7 +84,7 @@ export default class ResultCountry extends Component {
         return (
             <div className="result-list" >
                 <ConditionalContent isLoading={loading} error={error}>
-                    <h4>{country}</h4>
+                    <h3>{country}</h3>
                     <ul className="list-group">
                         <Link
                             to={"/searchbycity/result/" + first} style={{ color: 'black', textDecoration: 'none' }}>

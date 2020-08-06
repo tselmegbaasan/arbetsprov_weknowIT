@@ -61,11 +61,11 @@ export default class ResultPopulation extends Component {
         return (
             <div className="result-list">
                 <ErrorCondition condition={error}>
-                    <h4>{city}</h4>
+                    <h3>{city}</h3>
                     <ul className="list-group">
                         <li className="list-group-item">
                             <h6>POPULATION</h6>
-                            {result}
+                            <h4>{result}</h4>
                         </li>
                     </ul>
                 </ErrorCondition>

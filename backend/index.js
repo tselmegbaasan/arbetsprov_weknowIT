@@ -4,7 +4,7 @@ const username = "&username=weknowit";
 
 exports.getByCity = (req, res) => {
     const city_name = req.params.city;
-    fetch(base_url + `q=${city_name}` + "&featureCode=PPLA&featureCode=PPLC&featureCode=PPLA2&featureCode=PPLA3&orderby=population" + username, {
+    fetch(base_url + `name_equals=${city_name}` + "&featureCode=PPLA&featureCode=PPLC&featureCode=PPLA2&featureCode=PPLA3&orderby=population" + username, {
         method: "GET"
     })
         .then(response => response.json())
